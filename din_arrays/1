@@ -1,0 +1,31 @@
+#include <iostream>
+
+int main() {
+    int n, m;
+    std::cin >> n >> m;
+    int i, j;
+    int a = 1;
+    int** arr = new int*[n];
+    for (i = 0; i < n; i++) {
+        arr[i] = new int[m];
+    }
+    for (i = 0; i < n; i++) {
+        if (i % 2 == 0) {
+            for (j = 0; j < m; j++) {
+                arr[i][j] = a++;
+            }
+        }
+        else {
+            for (j = m - 1; j >= 0; j--) {
+                arr[i][j] = a++;
+            }
+        }
+    }
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < m; j++) {
+            std::cout << arr[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    return 0;
+}
