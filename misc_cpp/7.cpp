@@ -1,9 +1,10 @@
 #include <iostream>
-#include <cmath>
+
+
 int main() {
 	int R;
 	std::cin >> R;
-	int sum = 0;
+	long long sum = -1;
 	for (int y = 0; y <= R; ++y) {
 		for (int x = 0; x <= R; ++x) {
 			if ((x * x + y * y) <= R * R) {
@@ -11,6 +12,6 @@ int main() {
 			}
 		}
 	}
-	std::cout << sum * 4 - 4 * R;
+	std::cout << 1 + sum * 4 - 4 * R;
 	return 0;
 }
