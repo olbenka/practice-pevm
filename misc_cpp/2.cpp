@@ -18,7 +18,5 @@ int main() {
         int x2 = (-b - sqrt(D)) / 2 / a;
         std::cout << "two solutions: " << x1 << "," << x2 << std::endl;
     }
-
-
     return 0;
 }
