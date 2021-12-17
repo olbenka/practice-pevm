@@ -6,7 +6,7 @@ int main()
     int counter = 1;
 
     std::cin >> x1>>x2>>dx>>eps;
-    std::cout << "x\tf(x)\tsin(x)\n";
+    std::cout << "x|tf(x)|tsin(x)|n";
     for (; x1 <= x2; x1 += dx) {
         double curr =x1;
         double summ = 0;
