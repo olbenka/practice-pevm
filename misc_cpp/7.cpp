@@ -1,18 +1,16 @@
 #include <iostream>
+#include <cmath>
 int main() {
 	int R;
 	std::cin >> R;
 	int sum = 0;
-	for (int y = -(int)R; y <= (int)R; y += 1)
-	{
-		for (int x = -(int)R; x <= (int)R; x += 1)
-		{
-			if ((x * x + y * y) <= R * R)
-			{
-				++sum;
+	for (int y = 0; y <= R; ++y) {
+		for (int x = 0; x <= R; ++x) {
+			if ((x * x + y * y) <= R * R) {
+				sum += 1;
 			}
 		}
 	}
-	std::cout << sum;
+	std::cout << sum * 4 - 4 * R;
 	return 0;
 }
