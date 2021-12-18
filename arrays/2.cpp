@@ -1,8 +1,8 @@
 #include <iostream>
+
 int main() {
-	int N;
+	int N, sum = 0;
 	double x;
-	int sum = 0;
 	std::cin >> N >> x;
 	double b = 1;
 	int* a = new int[N + 1];
@@ -13,6 +13,6 @@ int main() {
 		b *= x;
 	}
 	std::cout << sum << std::endl;
-  delete[] a;
+        delete[] a;
 	return 0;
 }
