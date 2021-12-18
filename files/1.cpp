@@ -25,27 +25,27 @@ int main(int argc, char* argv[])
     std::cout << "Output file successfully opened\n";
 
     char c;
-    bool curr = 0;
+    bool curr = false;
     while ((c = in.peek()) != EOF) {
         c = in.get();
         if ((c == '$') && (in.peek() == '$')) {
-            if (curr == 0) {
+            if (curr == false) {
                 out << "<math>";
-                curr = 1;
+                curr = true;
             }
             else {
                 out << "<\math>";
-                curr = 0;
+                curr = false;
             }
         }
         else if ((c == '$') && (in.peek() != '$')) {
-            if (curr == 0) {
+            if (curr == false) {
                 out << "<math>";
-                curr = 1;
+                curr = true;
             }
             else {
                 out << "<\math>";
-                curr = 0;
+                curr = false;
             }
         }
         else
