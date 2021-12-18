@@ -1,0 +1,11 @@
+std::string no_space(std::string x)
+{
+    //your code here
+  std::string str;
+  for (int i = 0; i < x.length(); i++){
+    if (x[i] != ' '){
+      str += x[i];
+    }
+  }
+  return str;
+}
