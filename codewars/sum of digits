@@ -1,0 +1,15 @@
+int digital_root(int n)
+{
+  int s=0;
+  int k;
+  do {
+    while (n!=0){
+      s+=n%10;
+      n=n/10;
+    }
+    n=s;
+    k=s;
+    s=0;
+  } while (k/10!=0);
+  return n;
+}
