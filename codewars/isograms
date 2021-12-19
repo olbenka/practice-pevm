@@ -1,0 +1,16 @@
+bool is_isogram(std::string str) {
+  int a[26];
+  char s;
+  for(int i=0;i<26;i++){
+    a[i]=0;
+  }
+    for(unsigned long i=0;i<str.size();i++){
+      s=std::tolower(str[i]);
+      a[int(s)-'a']++;
+    }
+    for (unsigned long i=0;i<26;i++){
+      if (a[i]>1)
+        return false;
+    }
+    return true;
+}
