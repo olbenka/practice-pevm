@@ -1,0 +1,16 @@
+#include <string>
+std::string duplicate_encoder(const std::string& word){
+  std::string slovo = "";
+    for (int i = 0; i < word.size(); i++)
+        slovo += std::tolower(word[i]);
+
+    std::string s = "";
+    for (int i = 0; i < word.size(); i++)
+    {
+        if (std::count(slovo.begin(), slovo.end(), slovo.at(i)) > 1)
+            s += ")";
+        else
+            s += "(";
+    }
+    return s;
+}
