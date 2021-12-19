@@ -1,0 +1,17 @@
+#include <string>
+
+std::string DNAStrand(const std::string& dna)
+{
+  std::string r;
+  for(int i=0; i < dna.size();i++){
+    if (dna[i]=='A')
+      r +='T';
+    else if (dna[i]=='T')
+      r +='A';
+    else if (dna[i]=='G')
+      r +='C';
+    else 
+      r +='G';
+    }
+  return r;
+}
