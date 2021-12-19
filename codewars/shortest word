@@ -1,0 +1,19 @@
+#include <string>
+int find_short(std::string str)
+{
+  int min = str.size()+1;
+  int k = 0;
+  for (unsigned long i=0;i<str.size();++i){
+    if (str[i]!=' ')
+      k+=1;
+    else
+    {
+      if (k< min )
+        min =k;
+      k=0;
+    }
+  }
+  if (k< min )
+    min =k;
+  return min;
+}
