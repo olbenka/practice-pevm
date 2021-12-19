@@ -1,0 +1,43 @@
+#include <string>
+
+std::string createPhoneNumber(const int arr [10]){
+  std::string s = "";
+  std::string s1 = "";
+  for (int i = 0; i < 10; ++i )
+  {
+    if (arr[i] == 0) 
+      s += "0";
+    if (arr[i] == 1) 
+      s += "1";
+    if (arr[i] == 2) 
+      s += "2";
+    if (arr[i] == 3) 
+      s += "3";
+    if (arr[i] == 4) 
+      s += "4";
+    if (arr[i] == 5) 
+      s += "5";
+    if (arr[i] == 6) 
+      s += "6";
+    if (arr[i] == 7) 
+      s += "7";
+    if (arr[i] == 8) 
+      s += "8";
+    if (arr[i] == 9) 
+      s += "9";   
+  } 
+  s1 = "(";
+  s1 += s[0];
+  s1 += s[1];
+  s1 += s[2];
+  s1 += ") ";
+  s1 += s[3];
+  s1 += s[4];
+  s1 += s[5];
+  s1 +=  "-";
+  s1 += s[6];
+  s1 += s[7];
+  s1 += s[8];
+  s1 += s[9];
+  return  s1;
+}
