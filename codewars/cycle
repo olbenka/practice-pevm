@@ -1,0 +1,17 @@
+int cycle(int n) {
+    int d = 1;
+    int count = 0;
+    if (n % 2 == 0 || n % 5 == 0){
+      return -1;
+    }
+    else{
+     do {
+        while (d < n) {
+            d *= 10;
+            ++count;
+        }
+        d = d % n;
+     } while (d != 1);
+     return count;
+    }
+}
