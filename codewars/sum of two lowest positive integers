@@ -1,0 +1,17 @@
+#include <vector>
+
+long sumTwoSmallestNumbers(std::vector<int> numbers)
+{
+    long min = std::max(numbers[0],numbers[1]);
+    long pmin = std::min(numbers[0],numbers[1]);
+    for (unsigned long i=0;i<numbers.size();++i){
+      if (numbers[i]<=min){
+        pmin = min;
+        min = numbers[i];
+      }
+      else if (numbers[i]<=pmin)
+        pmin=numbers[i];
+        
+    }
+  return min + pmin;
+}
