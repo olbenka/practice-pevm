@@ -1,14 +1,36 @@
 #include<iostream>
 #include<string>
 
+std::string number_to_string(int num) {
+	std::string word = "";
+	int a = 0;
+	if (num < 0) {
+		num = num * (-1);
+		a = 1;
+	}
+	while (num != 0) {
+		word += (char)48 + num % 10;
+		num = num / 10;
+	}
+	for (int i = 0; i < word.size() / 2; i++) {
+		char tmp = word[i];
+		word[i] = word[word.size() - 1 - i];
+		word[word.size() - 1 - i] = tmp;
+
+	}
+	if (a == 1) {
+		word = "-" + word;
+	}
+	return word;
+}
 std::string right(int num, int sp) {
-	std::string res = std::to_string(num);
-	int num_d = 0;
+	std::string res = number_to_string(num);
+	int number = 0;
 	do {
-		++num_d;
+		++number;
 		num /= 10;
 	} while (num != 0);
-	for (int i = 0; i < sp - num_d; ++i) {
+	for (int i = 0; i < sp - number; ++i) {
 		res = " " + res;
 	}
 	return res;
