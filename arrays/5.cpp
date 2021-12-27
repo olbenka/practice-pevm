@@ -1,18 +1,20 @@
-#include <iostream>
+#include<iostream>
 
 int main() {
-    int n = 10, sum, max = 0;
-    int A[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    sum = A[0] + A[1];
-
-    for (int i = 0; i < n - 1; ++i)
-    {
-        if (A[i] + A[i + 1] > sum) {
-            sum = A[i] + A[i + 1];
-            max = i;
-        }
+    int n;
+    std::cin >> n;
+    int* a = new int[n];
+    int sum = 0;
+    int maxsum = 0;
+    for (int i = 0; i < n; ++i) {
+        std::cin >> a[i];
     }
-    std::cout << A[max] << " " << A[max + 1] << std::endl;
-
+    for (int i = 0; i < n-1; ++i) {
+        sum = a[i] + a[i + 1];
+        if (sum > maxsum) maxsum = sum;
+        else sum = 0;
+    }
+    std::cout << maxsum;
+    delete[] a;
     return 0;
 }
